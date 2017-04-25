@@ -25,7 +25,7 @@ export default class ReactVRFirst extends React.Component {
             textAlignVertical: 'center',
             transform: [{translate: [0, 0, -3]}],
           }}>
-          hello
+          Welcome
         </Text>
       </View>
     );
