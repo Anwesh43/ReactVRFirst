@@ -9,24 +9,21 @@ import {
 } from 'react-vr';
 
 export default class ReactVRFirst extends React.Component {
-  render() {
+    render() {
+    const textStrings = ["Hello","Strike","Scar"]
+    const textViews = textStrings.map((text)=>(<View style={{margin:0.1,height:0.3,backgroundColor:'#009688'}}><Text style={{font:5,color:'white',textAlign:'center'}}>{text}</Text></View>))
     return (
       <View>
         <Pano source={asset('chess-world.jpg')}/>
-        <Text
-          style={{
-            backgroundColor: '#777879',
-            fontSize: 0.8,
-            fontWeight: '400',
-            layoutOrigin: [0.5, 0.5],
-            paddingLeft: 0.2,
-            paddingRight: 0.2,
-            textAlign: 'center',
-            textAlignVertical: 'center',
-            transform: [{translate: [0, 0, -3]}],
-          }}>
-          Welcome
-        </Text>
+        <View style={{
+          flex:1,
+          width:2,
+          flexDirection:'column',
+          alignItems:'stretch',
+          transform:[{translate:[-1,1,-4]}]
+        }}>
+        {textViews}
+        </View>
       </View>
     );
   }
