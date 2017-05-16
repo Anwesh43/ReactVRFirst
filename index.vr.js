@@ -12,7 +12,19 @@ import {
 export default class ReactVRFirst extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {boxColor:'red'}
+        this.state = {boxColor:'red',deg:0}
+    }
+    componentDidMount() {
+        const maxDeg = 90
+        const interval = setInterval(()=>{
+            var deg = this.state.deg-maxDeg/10
+            if(Math.abs(this.state.deg) < maxDeg) {
+                this.setState({deg})
+            }
+            else {
+                clearInterval(interval)
+            }
+        },100)
     }
     render() {
     const textStrings = ["Hello","Strike","Scar"]
@@ -25,7 +37,7 @@ export default class ReactVRFirst extends React.Component {
           width:2,
           flexDirection:'column',
           alignItems:'stretch',
-          transform:[{translate:[-1,-1,-5]},{rotateX:90}]
+          transform:[{translate:[-1,-1,-5]},{rotateX:this.state.deg}]
         }}>
         {textViews}
         </View>
