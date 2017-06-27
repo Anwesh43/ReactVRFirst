@@ -31,7 +31,7 @@ export default class ReactVRFirst extends React.Component {
     const textViews = textStrings.map((text)=>(<View style={{margin:0.1,height:0.3,backgroundColor:'#009688'}}><Text style={{fontSize:0.2,color:'white',textAlign:'center'}}>{text}</Text></View>))
     return (
       <View>
-        <Pano source={asset('chess-world.jpg')}>
+        <Pano source={asset('nature.jpg')}>
         <View style={{
           flex:1,
           width:2,
